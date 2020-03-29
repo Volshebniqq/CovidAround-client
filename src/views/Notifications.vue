@@ -3,6 +3,12 @@
     <img src="logo.png" alt="" class="logo">
     <h2>Welcome to Covid Around.</h2>
     <p v-if="contactDate">You had a contact with infected person on {{ contactDate }}</p>
+    <p class="explanation">
+      <i class="circle red"></i> - area where you may have contacted with an infected person
+    </p>
+    <p class="explanation">
+      <i class="circle orange"></i> - area where you may have contacted with potentially infected person
+    </p>
     <GmapMap
       :center="mapCenter"
       :zoom="16"
@@ -15,7 +21,7 @@
         disableDefaultUi: false
       }"
       map-type-id="terrain"
-      style="width: 100%; height: 500px"
+      style="width: 100%; height: 450px"
     >
     <GmapCircle
       :center="{ lat: threat1.lat, lng: threat1.long }"
@@ -168,6 +174,22 @@ export default {
     p {
       font-size: 14px;
       margin-bottom: 10px;
+    }
+    .explanation {
+      text-align: left;
+      .circle {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
     }
   }
 </style>

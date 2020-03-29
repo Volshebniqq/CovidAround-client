@@ -2,8 +2,8 @@
   <div class="register-container">
     <img src="logo.png" class="logo" />
     <form>
-      <label>User identificator</label>
-      <input :value="userId" type="text" disabled>
+      <!-- <label>User identificator</label> -->
+      <input :value="userId" type="hidden" disabled>
       <label>First Name</label>
       <input type="text" v-model="firstName">
       <label>Last Name</label>
